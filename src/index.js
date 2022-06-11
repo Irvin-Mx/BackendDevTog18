@@ -18,37 +18,7 @@ app.use(express.json());
 // usamos el router
 app.use("/posts", postsRouter)
 
-
- 
-//  //*Gets post by id
-//  app.get("/posts/:id", async (req,res)=>{
-//      
-      
-//     console.log(typeof(parametros))
-     
-//      const post = await Post.findOne({_id:{$eq: parametros}})
-//      res.json(post)
-//   })
-
-// //  //*Creates new post
-//  app.post("/posts", async (req,res)=>{
-//      //console.log("body:", req.body);
-//      // Guardamos el post en una constante
-//      const post = req.body;
- 
-//      console.log(post)
- 
-//      await Post.create(post)
-//      console.log("post created")
- 
- 
-//      // Enviamos respuesta
-//      res.status(201); // Estado de creado
-//      res.json(post)
-//  })
-
-
-
+// inicamos el server
 mongoose
     .connect(URL)
     .then(()=>{
