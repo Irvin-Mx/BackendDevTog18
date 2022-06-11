@@ -12,7 +12,7 @@ const postSchema = new mongoose.Schema({
 })
 
 //modelo creado
-const Post = mongoose.model('Posts', postSchema) //modelo instanciado
+const Post = mongoose.model('posts', postSchema) //modelo instanciado
 
 
 //Exportamos el modelo de koder unicamente, ya que el schema solo lo requerimos aqui

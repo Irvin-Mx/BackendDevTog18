@@ -1,7 +1,7 @@
 {
   "name": "kodemiaapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "1.Lo primero que se hizo fue crear la estructura básica(se puede decir que hicimos un setup de un API)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
@@ -16,5 +16,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irvin-Mx/BackendDevTog18.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Irvin-Mx/BackendDevTog18/issues"
+  },
+  "homepage": "https://github.com/Irvin-Mx/BackendDevTog18#readme"
 }
