@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
     mes: Number,
     año: Number,
     title: String,
-    tags: String
+    tags: String,
 })
 
 //modelo creado

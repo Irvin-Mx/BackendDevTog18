@@ -34,9 +34,9 @@ app.get("/posts", async (req,res)=>{
  app.get("/posts/:id", async (req,res)=>{
      const parametros = req.params.id
       
-    //console.log(typeof(parametros))
+    console.log(typeof(parametros))
      
-     const post = await Post.findOne({id:{$eq: parametros}})
+     const post = await Post.findOne({_id:{$eq: parametros}})
      res.json(post)
   })
 
