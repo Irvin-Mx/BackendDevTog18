@@ -18,12 +18,45 @@ const URL =  `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retr
 const app = express();
 
 
+//midleware
+app.use(express.json())
+
+
+//* Gets All posts from database
 app.get("/posts", async (req,res)=>{
     //Leer posts de base de datos
-    const posts = await Post.find({})
-    // console.log(posts)
-    res.json(posts)
-})
+ const posts = await Post.find({})
+ console.log(posts)
+      res.json(posts)
+  })
+ 
+ //*Gets post by id
+ app.get("/posts/:id", async (req,res)=>{
+     const parametros = req.params.id
+      
+    //console.log(typeof(parametros))
+     
+     const post = await Post.findOne({id:{$eq: parametros}})
+     res.json(post)
+  })
+
+ //*Creates new post
+ app.post("/posts", async (req,res)=>{
+     //console.log("body:", req.body);
+     // Guardamos el post en una constante
+     const post = req.body;
+ 
+     console.log(post)
+ 
+     await Post.create(post)
+     console.log("post created")
+ 
+ 
+     // Enviamos respuesta
+     res.status(201); // Estado de creado
+     res.json(post)
+ })
+
 
 
 mongoose
@@ -31,18 +64,6 @@ mongoose
     .then(async ()=>{
         console.log("Se conectó exitosamente a la base de datos.");
 
-        //  const newPost = new Post({
-        //      avatar:"Donkey kong",
-        //      banner: "img.jpg",
-        //      dia: 22,
-        //      mes: 1,
-        //      año: 2022,
-        //      title: "Node is awsome !",
-        //      tags: "js node express mongoose mongodb"
-        //  })
-
-        //  await Post.create(newPost)
-        //  console.log("koder created")
         app.listen(PORT, () => {
             console.log("Server ejecutandose en el puerto:", PORT);
           });
