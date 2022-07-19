@@ -18,5 +18,4 @@ const postsCreado = await devCase.postsDev(req.body);
 res.statusCode = 201
 res.json(postsCreado)
 })
-
-  module.exports = router;
+module.exports = router;
